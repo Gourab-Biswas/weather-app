@@ -112,3 +112,34 @@ body {
     border-radius: 10px;
   }
 }
+
+
+
+
+@media (width<800px){
+  .container{
+    width: 100%;
+    height: 100%;
+  }
+  .weather-bottom{
+    grid-template-columns: 1fr;
+  }
+  .weather-card{
+    justify-content: center;
+  }
+
+  .weather-top form input{
+    width: 70%;
+    margin: auto;
+  }
+  .weather-top form i{
+    left: 18%;
+  }
+
+  .weather-middle .weather-data p {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  
+}
+
