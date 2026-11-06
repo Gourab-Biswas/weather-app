@@ -44,7 +44,7 @@ document.querySelector(".weather-search").addEventListener("submit",(e)=>{
 })
 
 let weatherData = async () => {
-  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=5173737aa9d0f9276aae9160e43fc910`;
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5173737aa9d0f9276aae9160e43fc910`;
   try {
     let res = await fetch(weatherUrl);
     let data = await res.json();
@@ -56,14 +56,14 @@ let weatherData = async () => {
     weatherForcast.textContent = weather[0].main;
     dateTime.innerHTML = getTime(dt);
     weatherIcon.innerHTML = `<img src= "http://openweathermap.org/img/wn/${weather[0].icon}@2x.png">`;
-    weatherTemp.innerHTML = `${Math.floor(main.temp)}&deg`;
-    weatherMin.innerHTML = `Min: ${main.temp_min.toFixed()}&deg`;
-    weatherMax.innerHTML = `Max: ${main.temp_max.toFixed()}&deg`;
+    weatherTemp.innerHTML = `${Math.floor(main.temp)}&degC`;
+    weatherMin.innerHTML = `Min: ${main.temp_min.toFixed()}&degC`;
+    weatherMax.innerHTML = `Max: ${main.temp_max.toFixed()}&degC`;
 
-    feelsLike.innerHTML = `${main.feels_like}&deg`;
+    feelsLike.innerHTML = `${main.feels_like}&degC`;
     humidity.innerHTML = `${main.humidity}%`;
     winds.innerHTML = `${wind.speed} m/s`;
-    pressure.innerHTML = `${main.pressure} hpa`;
+    pressure.innerHTML = `${main.pressure} mbar`;
   } catch (error) {}
 };
 
